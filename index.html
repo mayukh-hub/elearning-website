@@ -22,7 +22,7 @@
         </nav>
         <div class = "nav-btn">
             <a href="#" class="join-btn">Join Now</a>
-            <button class="mobile-menu-btn" id="menuBtn">
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Toogle navigation" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -32,7 +32,7 @@
     <section  class="hero">
         <div class="hero-content">
             <span class="subtitle">BEST ONLINE COURSES</span>
-            <h1>Get Educated Onlinew From Your Home</h1>
+            <h1>Get Educated Online From Your Home</h1>
             <p>Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus elitr.</p>
             <div class="hero-btns">
                 <a href="#" class="btn-primary">Read More</a>
@@ -94,7 +94,7 @@
         </div>
     </section>
 
-    <!--cource section-->
+    cource section
     <section class="cource-section">
         <div class="center-title">
             <span class="section-tag">CATEGORIES</span>
@@ -336,23 +336,10 @@
             </div>
         </div>
     </footer>
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const navLinks = document.getElementById('navLinks');
-        //const menuIcon = menuBtn.querySelector('i');
+    <script src="./script.js">
+     
 
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-
-            if (navLinks.classList.contains('show')) {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            } 
-            else {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            }
-        });
     </script>
+
 </body>
 </html>
