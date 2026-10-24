@@ -104,6 +104,16 @@ categoryCards.forEach((card)=>{
     });
 });
 
+// popular cards 
+
+const courseCards = document.querySelectorAll(".course-card");
+courseCards.forEach((card)=>{
+    card.addEventListener("click",()=>{
+        const courseName = card.querySelector(".course-content").querySelector("h3").textContent.trim();
+        console.log("selected course:",courseName);
+    });
+});
+
 
 // newsletter email validation 
 const newsletterForm =
