@@ -855,6 +855,7 @@ body {
     }
 }
 
+
 /* ---------- Mobile (<=768px) ---------- */
 @media (max-width: 768px) {
     .logo {
@@ -1060,3 +1061,226 @@ body {
         padding: 10px;
     }
 }
+
+
+
+/* =====================================
+   PREMIUM WEBSITE ANIMATIONS
+===================================== */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll reveal: hidden before entering viewport */
+.section-animate {
+    opacity: 0;
+    transform: translateY(45px);
+    filter: blur(4px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.8s ease;
+}
+
+/* Visible after JavaScript adds the class */
+.section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Hero entrance */
+.hero-content .subtitle {
+    animation: fadeSlideUp 0.8s ease both;
+}
+
+.hero-content h1 {
+    animation: fadeSlideUp 1s 0.12s ease both;
+}
+
+.hero-content p {
+    animation: fadeSlideUp 1s 0.24s ease both;
+}
+
+.hero-btns {
+    animation: fadeSlideUp 1s 0.38s ease both;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Premium card hover */
+.feature-box,
+.cat-item,
+.course-card,
+.instructor-card,
+.testimonial-card {
+    transition:
+        transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.4s ease,
+        background-color 0.3s ease;
+}
+
+.feature-box:hover,
+.course-card:hover,
+.instructor-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(24, 29, 56, 0.16);
+}
+
+/* Image zoom inside category cards */
+.cat-item {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.cat-item:hover {
+    transform: translateY(-7px) scale(1.015);
+    box-shadow: 0 16px 32px rgba(24, 29, 56, 0.2);
+}
+
+/* Zoom course images on hover */
+.course-img-box {
+    overflow: hidden;
+}
+
+.course-card:hover .course-img-box {
+    background-size: 110%;
+}
+
+/* Button shine effect */
+.btn-primary,
+.btn-secondary,
+.join-btn,
+.newsletter-form button {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.join-btn:hover,
+.newsletter-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(6, 187, 204, 0.35);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(255, 255, 255, 0.2);
+}
+
+/* Moving shine on buttons */
+.btn-primary::after,
+.join-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+}
+
+.btn-primary:hover::after,
+.join-btn:hover::after {
+    left: 150%;
+}
+
+/* Floating feature icons */
+.feature-box i {
+    display: inline-block;
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease;
+}
+
+.feature-box:hover i {
+    transform: translateY(-8px) rotate(-6deg) scale(1.12);
+    color: white;
+}
+
+/* Navigation underline animation */
+.nav-links a::after {
+    transition: width 0.35s ease;
+}
+
+/* Testimonial active card */
+.testimonial-card.active-testimonial {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(6, 187, 204, 0.2);
+}
+
+/* Slider arrow interaction */
+.arrow {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.arrow:hover {
+    transform: scale(1.12);
+}
+
+/* Accessibility: respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .section-animate {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
+
+
+.about-text h2 .letter-animation {
+    display: inline-block;
+    opacity: 0;
+    animation: aboutLetterReveal 0.6s ease infinite alternate;
+}
+
+@keyframes aboutLetterReveal {
+    0% {
+        opacity: 0.3;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+}
+
+
