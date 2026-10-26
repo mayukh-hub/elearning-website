@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // fooorer animation
+
 
 
 
