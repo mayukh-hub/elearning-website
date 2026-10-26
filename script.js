@@ -103,21 +103,31 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideInterval = null;
 
     function showSlide(index) {
-        if (!hero || !heroTitle || !heroSubtitle || !heroDescription) {
+        if (!hero || !heroTitle || !heroSubtitle || !heroDescription || !slides.length) {
             return;
         }
 
         currentSlide = (index + slides.length) % slides.length;
-
         const slide = slides[currentSlide];
+        const content = document.querySelector(".hero-content");
 
-        heroTitle.textContent = slide.title;
-        heroSubtitle.textContent = slide.subtitle;
-        heroDescription.textContent = slide.description;
+        if(content){
+            content.classList.add("slide-fade-out");
+
+            setTimeout(()=>{
+        if(heroTitle) heroTitle.textContent = slide.title;
+       if(heroSubtitle) heroSubtitle.textContent = slide.subtitle;
+       if(heroDescription) heroDescription.textContent = slide.description;
 
         hero.style.backgroundImage =
             `linear-gradient(rgba(24, 29, 56, 0.7), rgba(24, 29, 56, 0.7)), url("${slide.image}")`;
+            content.classList.remove("slide-fade-out");
+    
+            },250);
+        }
     }
+
+    
 
     function startSlider() {
         if (slideInterval) {
@@ -334,9 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             dot.classList.add("active");
         }
-
         dot.addEventListener("click", activateTestimonial);
-
         dot.addEventListener("keydown", (event) => {
             if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
@@ -353,19 +361,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (aboutHeading) {
         const headingText = aboutHeading.textContent.trim();
         aboutHeading.textContent = "";
-
         [...headingText].forEach((letter, index) => {
             const span = document.createElement("span");
-
             span.textContent = letter === " " ? "\u00A0" : letter;
             span.classList.add("letter-animation");
             span.style.animationDelay = `${index * 0.08}s`;
             span.style.animationDuration = "1s";
-
             aboutHeading.appendChild(span);
         });
     }
 
+
+    // fooorer animation
 
 
 
