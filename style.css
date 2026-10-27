@@ -1366,3 +1366,93 @@ html {
 .footer .gal-thumb:hover {
     transform: scale(1.06);
 }
+
+
+/* ---------- TESTIMONIAL CARDS: bounded client details ---------- */
+:root {
+    --primary: #06BBCC;
+}
+
+.testimonial-section {
+    overflow: hidden;
+}
+
+.testimonial-grid {
+    align-items: stretch;
+}
+
+.testimonial-card {
+    min-width: 0;
+    height: 100%;
+    padding: 30px 24px;
+    background: #F0FBFC;
+    border: 1px solid rgba(24, 29, 56, 0.08);
+    border-radius: 8px;
+    text-align: center;
+    overflow-wrap: anywhere;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(24, 29, 56, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                background-color 0.3s ease, color 0.3s ease;
+}
+
+.testimonial-card h3,
+.testimonial-card .client-prof,
+.testimonial-card p {
+    width: 100%;
+    max-width: 100%;
+}
+
+.testimonial-card h3 {
+    margin: 0 0 4px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.testimonial-card .client-prof {
+    margin-bottom: 16px;
+}
+
+.testimonial-card p {
+    margin: 0;
+    flex: 1;
+}
+
+.testimonial-card.active-testimonial {
+    background: #06BBCC;
+    color: #fff;
+    border-color: #06BBCC;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(6, 187, 204, 0.22);
+}
+
+.testimonial-card.active-testimonial h3,
+.testimonial-card.active-testimonial .client-prof,
+.testimonial-card.active-testimonial p {
+    color: #fff;
+}
+
+.testimonial-dots .dot:focus-visible,
+.slider-arrows .arrow:focus-visible {
+    outline: 3px solid #181d38;
+    outline-offset: 3px;
+}
+
+@media (max-width: 992px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-grid {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 0 20px;
+    }
+
+    .testimonial-card {
+        padding: 26px 22px;
+    }
+}
