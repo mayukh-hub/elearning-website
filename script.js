@@ -355,22 +355,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-    // ABOUT US: Letter-by-letter heading animation
-    const aboutHeading = document.querySelector(".about-text h2");
-
-    if (aboutHeading) {
-        const headingText = aboutHeading.textContent.trim();
-        aboutHeading.textContent = "";
-        [...headingText].forEach((letter, index) => {
-            const span = document.createElement("span");
-            span.textContent = letter === " " ? "\u00A0" : letter;
-            span.classList.add("letter-animation");
-            span.style.animationDelay = `${index * 0.08}s`;
-            span.style.animationDuration = "1s";
-            aboutHeading.appendChild(span);
-        });
-    }
-
 
 
 
