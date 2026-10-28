@@ -66,7 +66,7 @@ body {
 }
 
 .join-btn {
-    margin: left -10px; 
+    margin-left:  -10px; 
     background-color:#06BBCC;
     color: white;
     gap: 28px;
@@ -272,12 +272,36 @@ body {
     letter-spacing: 1px;
 }
 
-.about-text h2 {
-    font-size: 36px;
+
+
+
+.about-text h2.about-heading {
+    font-size: 30px;
     font-family: sans-serif;
     color: #181d38;
     margin: 10px 0 20px 0;
 }
+
+.typing-text {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+    animation: typing 3s steps(20, end)infinite forwards;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+
 
 .about-text p {
     color: #666666;
@@ -612,9 +636,9 @@ body {
 }
 
 .inst-img-1 { background-image: url("teacher-01.jpeg"); }
-.inst-img-2 { background-image: url("teacher-02.jpeg"); }
+.inst-img-2 { background-image: url("./teacher-02.png"); }
 .inst-img-3 { background-image: url("teacher-03.jpeg"); }
-.inst-img-4 { background-image: url("teacher-04.jpeg"); }
+.inst-img-4 { background-image: url("./teacher-04.png"); }
 
 .instructor-social {
     position: absolute;
@@ -1456,3 +1480,5 @@ html {
         padding: 26px 22px;
     }
 }
+
+
